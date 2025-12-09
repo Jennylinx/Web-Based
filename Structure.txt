@@ -1,0 +1,157 @@
+📂 record-referral-system/
+│
+├── 📂 backend/
+│   ├── 📂 config/
+│   │   ├── database.js              # MongoDB connection configuration
+│   │   ├── auth.js                  # JWT authentication setup
+│   │   └── environment.js           # Environment variables handler
+│   │
+│   ├── 📂 controllers/
+│   │   ├── authController.js        # Login/logout logic
+│   │   ├── adminController.js       # Admin-specific operations
+│   │   ├── adviserController.js     # Adviser-specific operations
+│   │   ├── studentController.js     # Student profile CRUD
+│   │   ├── referralController.js    # Referral logs management
+│   │   └── analyticsController.js   # Data analytics generation
+│   │
+│   ├── 📂 models/
+│   │   ├── User.js                  # Admin & Adviser schema
+│   │   ├── Student.js               # Student information schema
+│   │   ├── Referral.js              # Referral records schema
+│   │   ├── Consultation.js          # Consultation records schema
+│   │   └── AuditLog.js              # System activity tracking
+│   │
+│   ├── 📂 routes/
+│   │   ├── authRoutes.js
+│   │   ├── adminRoutes.js
+│   │   ├── adviserRoutes.js
+│   │   ├── studentRoutes.js
+│   │   ├── referralRoutes.js
+│   │   └── analyticsRoutes.js
+│   │
+│   ├── 📂 middleware/
+│   │   ├── authMiddleware.js        # JWT verification
+│   │   ├── roleMiddleware.js        # Role-based access control
+│   │   ├── validationMiddleware.js  # Input validation
+│   │   ├── errorHandler.js          # Global error handling
+│   │   └── uploadMiddleware.js      # File upload handling (multer)
+│   │
+│   ├── 📂 utils/
+│   │   ├── fileUpload.js            # Handle file uploads (assessments)
+│   │   ├── reportGenerator.js       # Generate reports
+│   │   └── dataProcessor.js         # Data analytics processing
+│   │
+│   ├── server.js                    # Express server entry point
+│   ├── package.json
+│   └── .env
+│
+├── 📂 frontend/
+│   ├── 📂 assets/
+│   │   ├── 📂 css/
+│   │   │   ├── global.css           # Global styles
+│   │   │   ├── login.css            # Login page styles
+│   │   │   ├── admin-dashboard.css  # Admin dashboard styles
+│   │   │   ├── adviser-dashboard.css # Adviser dashboard styles
+│   │   │   ├── student-profile.css  # Student profile styles
+│   │   │   ├── referral.css         # Referral management styles
+│   │   │   └── analytics.css        # Analytics page styles
+│   │   │
+│   │   ├── 📂 js/
+│   │   │   ├── 📂 utils/
+│   │   │   │   ├── api.js           # API fetch wrapper functions
+│   │   │   │   ├── auth.js          # Authentication helper functions
+│   │   │   │   ├── validators.js    # Form validation functions
+│   │   │   │   └── formatters.js    # Data formatting utilities
+│   │   │   │
+│   │   │   ├── 📂 components/
+│   │   │   │   ├── sidebar.js       # Sidebar component logic
+│   │   │   │   ├── header.js        # Header component logic
+│   │   │   │   ├── modal.js         # Modal component logic
+│   │   │   │   └── table.js         # Reusable table component
+│   │   │   │
+│   │   │   ├── 📂 pages/
+│   │   │   │   ├── login.js         # Login page logic
+│   │   │   │   ├── admin-dashboard.js    # Admin dashboard logic
+│   │   │   │   ├── adviser-dashboard.js  # Adviser dashboard logic
+│   │   │   │   ├── student-profile.js    # Student profile CRUD logic
+│   │   │   │   ├── student-list.js       # Student list management
+│   │   │   │   ├── referral-logs.js      # Referral logs logic
+│   │   │   │   └── analytics.js          # Analytics charts logic
+│   │   │   │
+│   │   │   └── main.js              # Main initialization script
+│   │   │
+│   │   ├── 📂 images/
+│   │   │   ├── logo.png
+│   │   │   ├── 📂 icons/
+│   │   │   └── 📂 backgrounds/
+│   │   │
+│   │   └── 📂 fonts/
+│   │
+│   ├── 📂 pages/
+│   │   ├── index.html               # Login page
+│   │   │
+│   │   ├── 📂 admin/
+│   │   │   ├── dashboard.html       # Admin dashboard
+│   │   │   ├── student-profile.html # Student profile management
+│   │   │   ├── student-list.html    # All students list
+│   │   │   ├── referral-logs.html   # Referral logs management
+│   │   │   ├── analytics.html       # Data analytics & charts
+│   │   │   └── settings.html        # Admin settings
+│   │   │
+│   │   └── 📂 adviser/
+│   │       ├── dashboard.html       # Adviser dashboard
+│   │       ├── student-list.html    # Adviser's students list
+│   │       ├── referral-management.html # Create/view referrals
+│   │       └── settings.html        # Adviser settings
+│   │
+│   └── 📂 components/               # Reusable HTML partials
+│       ├── sidebar-admin.html
+│       ├── sidebar-adviser.html
+│       ├── header.html
+│       └── footer.html
+│
+├── 📂 uploads/                      # Student assessments & documents
+│   ├── 📂 assessments/
+│   ├── 📂 reports/
+│   └── .gitkeep
+│
+├── 📂 database/
+│   ├── 📂 seeds/
+│   │   ├── adminSeed.js             # Initial admin accounts
+│   │   ├── adviserSeed.js           # Sample adviser accounts
+│   │   └── testData.js              # Test data for development
+│   │
+│   └── 📂 backups/
+│       └── backup-script.js         # Database backup utility
+│
+├── 📂 docs/
+│   ├── 📂 technical/
+│   │   ├── system-architecture.md
+│   │   ├── database-schema.md
+│   │   ├── api-documentation.md
+│   │   └── deployment-guide.md
+│   │
+│   ├── 📂 user-guides/
+│   │   ├── admin-manual.md
+│   │   └── adviser-manual.md
+│   │
+│   └── 📂 research/
+│       ├── chapter1-2.pdf           # Your capstone chapters
+│       ├── wireframes/              # UI mockups
+│       └── gantt-chart.pdf
+│
+├── 📂 tests/
+│   ├── 📂 unit/
+│   │   ├── auth.test.js
+│   │   ├── student.test.js
+│   │   └── referral.test.js
+│   │
+│   ├── 📂 integration/
+│   │   └── api.test.js
+│   │
+│   └── setup.js
+│
+├── .gitignore
+├── .env.example
+├── README.md
+└── package.json                     # Root package.json for scripts
